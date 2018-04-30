@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-var { sendMessage } = require('../../bots/telegram')
+var { sendMessage } = require('../../utils/bots/telegram')
 
 router.get('/', function(req, res){
     let { msg } =req.query
