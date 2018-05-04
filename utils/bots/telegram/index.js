@@ -24,7 +24,7 @@ function start() {
     let translateKoMsg = await fromEnToKo(msg.text);
 
     let message = `원문(original): ${originMsg}\n영문(English): ${translateEnMsg} \n한글(Korea): ${translateKoMsg}`
-    bot.sendMessage(glosgerDev.chatId, message);
+    bot.sendMessage(chatId, message);
   });
 }
 
