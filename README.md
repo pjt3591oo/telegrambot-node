@@ -30,5 +30,5 @@ $ npm start
 
 
 ```
-/api/v1.0/message?msg={message}&#65286;group={group name}
+/api/v1.0/message?msg={message}&group={group name}
 ```
