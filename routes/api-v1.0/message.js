@@ -2,9 +2,10 @@ var express = require('express');
 var router = express.Router();
 
 const {teams} = require('../../config/telegram.json')
-var { sendMessage } = require('../../utils/bots/telegram')
+const { sendMessage } = require('../../utils/bots/telegram')
 
-router.get('/', function(req, res){
+
+router.get('/', async function(req, res){
     let { msg, group } =req.query;
     let chatId = teams[group];
 
@@ -12,7 +13,7 @@ router.get('/', function(req, res){
         return res.status(404).json({message: 'invalid parameter name : group'})
     }
 
-    sendMessage({chatId, msg})
+    await sendMessage({chatId, msg})
     return res.json({message: msg})
 })
 
