@@ -19,18 +19,16 @@ function start() {
 
   bot.on('message', async (msg) => {
     const chatId = msg.chat.id;
-    let originMsg = msg.text
-    let translateEnMsg = await fromKoToEn(msg.text)
-    let translateKoMsg = await fromEnToKo(msg.text)
+    let originMsg = msg.text;
+    let translateEnMsg = await fromKoToEn(msg.text);
+    let translateKoMsg = await fromEnToKo(msg.text);
 
-    // fromEnToKo('한글')
-    // send a message to the chat acknowledging receipt of their message
     let message = `원문(original): ${originMsg}\n영문(English): ${translateEnMsg} \n한글(Korea): ${translateKoMsg}`
-    bot.sendMessage(chatId, message);
+    bot.sendMessage(glosgerDev.chatId, message);
   });
 }
 
-function sendMessage(msg){
+function sendMessage({chatId, msg}){
     bot.sendMessage(chatId, msg);
 }
 
